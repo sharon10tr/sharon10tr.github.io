@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="转化大师 - 专业网站流量转化率提升解决方案。提供完整的用户行为分析、A/B测试工具、着陆页优化策略及营销漏斗设计，帮助您将访客转化为付费客户。">
+    <meta name="keywords" content="转化大师, 转化率优化, CRO, 网站优化, 营销漏斗, A/B测试">
+    <title>转化大师 - 网站流量转化率提升与营销优化解决方案</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #0f172a;
+            --accent-color: #f59e0b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            border-radius: var(--radius);
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background-color: #dbeafe;
+            color: var(--primary-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 80px 0;
+            background-color: var(--bg-color);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: var(--border-color);
+            z-index: 0;
+        }
+
+        .step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            width: 200px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--card-bg);
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .step h4 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .step p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 60px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                gap: 15px;
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            .step {
+                display: flex;
+                align-items: flex-start;
+                text-align: left;
+                gap: 20px;
+            }
+
+            .step-number {
+                margin: 0;
+                flex-shrink: 0;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>转化大师</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#features">核心功能</a></li>
+                    <li><a href="#process">优化流程</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 0.9rem;">登录</a>
+                <a href="#" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">免费试用</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>让每一次点击<br>都转化为实际收益</h1>
+                    <p>转化大师为您提供全方位的网站转化率优化（CRO）工具与策略。从用户行为分析到着陆页测试，助您挖掘流量价值，提升投资回报率。</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; @media(min-width: 768px){justify-content: flex-start;}">
+                        <a href="#" class="btn btn-primary">开始提升转化率</a>
+                        <a href="#" class="btn btn-outline">查看成功案例</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>300%</h3>
+                            <p>平均转化提升</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>10k+</h3>
+                            <p>服务企业用户</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>24/7</h3>
+                            <p>数据实时监控</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <!-- Placeholder for dashboard visualization -->
+                    <img src="https://via.placeholder.com/600x400/2563eb/ffffff?text=转化大师+数据分析平台" alt="转化大师数据分析平台界面">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>全方位转化优化工具</h2>
+                    <p>不仅仅是数据分析，更是可落地的增长引擎</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="icon-box">📊</div>
+                        <h3>深度热力图分析</h3>
+                        <p>可视化用户点击、移动和滚动行为，精准定位页面中的流失点与高价值区域。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="icon-box">🧪</div>
+                        <h3>A/B 多变体测试</h3>
+                        <p>轻松创建并运行 A/B 测试，对比不同版本的表现，用数据驱动决策而非直觉。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="icon-box">🎯</div>
+                        <h3>营销漏斗建模</h3>
+                        <p>构建并监控完整的用户转化漏斗，识别关键流失节点，优化每一个转化环节。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="icon-box">📱</div>
+                        <h3>移动端适配诊断</h3>
+                        <p>专门针对移动设备浏览体验进行优化建议，确保在手机端也能获得完美转化。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="icon-box">🤖</div>
+                        <h3>智能建议引擎</h3>
+                        <p>基于 AI 算法，自动分析数据并给出具体的着陆页修改建议，降低试错成本。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="icon-box">🔒</div>
+                        <h3>隐私合规保障</h3>
+                        <p>符合 GDPR 及国内数据安全法规，确保用户数据在分析过程中得到严格保护。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="process">
+            <div class="container">
+                <div class="section-title">
+                    <h2>科学的转化优化流程</h2>
+                    <p>遵循数据驱动的标准化流程，确保每一次优化都有据可依</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>数据收集</h4>
+                        <p>安装脚本，收集网站真实访客行为数据，建立基准线。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>问题诊断</h4>
+                        <p>利用热力图和漏斗分析，识别高流失率环节与用户痛点。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>假设提出</h4>
+                        <p>针对发现的问题，制定具体的优化假设与测试方案。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h4>测试执行</h4>
+                        <p>创建 A/B 测试，小流量试错，避免对整体业务造成影响。</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <h4>结果验证</h4>
+                        <p>分析测试数据，确认改进效果，将优秀方案推广至全站。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>转化大师适合哪些类型的网站？</h3>
+                        <p>我们服务于电商、SaaS软件、在线教育、内容社区及各类企业官网。任何需要通过提升访客转化率来增加营收的网站都能从中受益。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>实施 CRO 优化需要多长时间？</h3>
+                        <p>从安装代码到出第一份分析报告通常需要 24 小时。一个完整的优化周期（包括测试与验证）通常需要 2-4 周，具体视项目复杂度而定。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>测试期间会影响正常业务吗？</h3>
+                        <p>我们的系统支持灰度发布和流量分流，通常只会将 5%-10% 的流量导向测试版本，确保不影响主流程的正常运行。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>数据安全如何保障？</h3>
+                        <p>我们采用银行级加密技术保护数据传输，并严格遵守数据隐私保护法规。所有数据仅用于优化分析，绝不向第三方泄露。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" class="cta-section">
+            <div class="container cta-content">
+                <h2>准备好提升您的转化率了吗？</h2>
+                <p>加入成千上万的企业，通过数据驱动实现业务增长。立即开始您的 14 天免费试用之旅。</p>
+                <a href="#" class="btn btn-primary" style="background-color: var(--accent-color); border-color: var(--accent-color); color: #fff;">免费注册账户</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="color: white; margin-bottom: 15px; display: inline-block;">
+                        <span>转化大师</span>
+                    </a>
+                    <p style="opacity: 0.8;">专注于网站转化率优化（CRO）领域，致力于帮助中小企业通过数据洞察实现精准营销和高效转化。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品功能</h4>
+                    <ul>
+                        <li><a href="#">热力图分析</a></li>
+                        <li><a href="#">A/B 测试</a></li>
+                        <li><a href="#">漏斗分析</a></li>
+                        <li><a href="#">用户反馈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源中心</h4>
+                    <ul>
+                        <li><a href="#">优化指南</a></li>
+                        <li><a href="#">行业白皮书</a></li>
+                        <li><a href="#">客户案例</a></li>
+                        <li><a href="#">帮助文档</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>support@transformmaster.com</li>
+                        <li>400-123-4567</li>
+                        <li>北京市朝阳区科技园区</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 转化大师 版权所有. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>

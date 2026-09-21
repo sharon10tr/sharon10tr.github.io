@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="峨眉雪芽官方网站，提供正宗峨眉山高山绿茶的在线购买与品鉴指南。了解峨眉雪芽的产地环境、制作工艺、冲泡方法及健康功效。">
+    <meta name="keywords" content="峨眉雪芽, 峨眉山绿茶, 高山茶, 茶叶购买, 绿茶冲泡">
+    <title>峨眉雪芽-正宗高山绿茶产地与品鉴指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c5e2e;
+            --secondary-color: #8c3a16;
+            --accent-color: #d4a373;
+            --bg-color: #f9f7f2;
+            --text-color: #333333;
+            --light-text: #666666;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .btn-outline {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #1e421f;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://picsum.photos/seed/emei_mountain/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .feature-item {
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: var(--light-text);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--light-text);
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 15px 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            font-weight: 700;
+        }
+
+        /* Tea Categories */
+        .categories {
+            padding: 80px 0;
+            background-color: #f0efe9;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--light-text);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--light-text);
+            margin-bottom: 20px;
+            min-height: 42px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            color: var(--secondary-color);
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        /* Brewing Guide */
+        .brewing {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .brewing-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        .brewing-info h2 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        .step-list {
+            counter-reset: step;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+
+        .step-item::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 35px;
+            font-weight: 700;
+        }
+
+        .step-item h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .step-item p {
+            font-size: 14px;
+            color: var(--light-text);
+        }
+
+        .brewing-visual {
+            background-color: var(--bg-color);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .tea-pot {
+            width: 120px;
+            height: 120px;
+            border: 4px solid var(--accent-color);
+            border-radius: 50%;
+            margin-bottom: 20px;
+            position: relative;
+            background: linear-gradient(135deg, #e0e0e0, #ffffff);
+        }
+
+        .tea-leaf {
+            width: 20px;
+            height: 20px;
+            background-color: var(--secondary-color);
+            border-radius: 50% 0 50% 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.8;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: #f9f7f2;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .faq-item h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .faq-item p {
+            font-size: 14px;
+            color: var(--light-text);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-grid, .brewing-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+                margin-bottom: 20px;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-actions .btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">
+                峨眉<span>雪芽</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#about">品牌故事</a></li>
+                    <li><a href="#products">茶叶系列</a></li>
+                    <li><a href="#brewing">冲泡指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#contact" class="btn btn-outline">联系我们</a>
+                <a href="#products" class="btn btn-primary">立即购买</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>来自云端的馈赠，品味自然之魂</h1>
+                <p>峨眉雪芽，生长于海拔800-1500米的峨眉山金顶附近。高山云雾滋养，汲取天地灵气，为您呈现色翠、香高、味醇、形美的绝佳绿茶。</p>
+                <a href="#products" class="btn btn-primary" style="padding: 12px 30px; font-size: 16px;">探索产品</a>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🏔️</div>
+                        <h3>高山生态</h3>
+                        <p>生长于海拔800米以上的原始森林，远离污染，天然纯净。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🍃</div>
+                        <h3>明前采摘</h3>
+                        <p>严格遵循传统节气，清明前后精心采摘，鲜嫩芽叶。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🍵</div>
+                        <h3>传统工艺</h3>
+                        <p>传承古法杀青、揉捻、干燥工艺，保留茶叶天然活性。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✨</div>
+                        <h3>健康养生</h3>
+                        <p>富含茶多酚、氨基酸及多种微量元素，抗氧化，提神醒脑。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/emei_tea_field/600/400" alt="峨眉山茶园风光">
+                        <div class="badge">国家地理标志保护产品</div>
+                    </div>
+                    <div class="about-text">
+                        <h2>源于自然，归于本真</h2>
+                        <p>峨眉雪芽是中国国家地理标志保护产品，原产于四川省峨眉山市。它不同于普通的平原绿茶，峨眉雪芽生长在峨眉山高寒湿润的气候环境中，常年云雾缭绕，漫射光充足。</p>
+                        <p>这种独特的生长环境赋予了峨眉雪芽独特的品质：干茶色泽嫩绿油润，冲泡后汤色嫩绿明亮，香气清雅持久，滋味鲜爽回甘。无论是商务洽谈还是日常品饮，峨眉雪芽都是您的理想之选。</p>
+                        <a href="#" class="btn btn-outline">阅读更多品牌故事</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="categories">
+            <div class="container">
+                <div class="section-header">
+                    <h2>精选茶品系列</h2>
+                    <p>针对不同需求，为您甄选最合适的峨眉雪芽产品</p>
+                </div>
+                <div class="category-grid">
+                    <!-- Card 1 -->
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/tea_premium/400/300" alt="峨眉雪芽特级礼盒">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">峨眉雪芽·特级礼盒</h3>
+                            <p class="card-desc">精选明前头采嫩芽，外形扁平光滑，色泽翠绿。适合重要场合馈赠亲友，彰显品味。</p>
+                            <div class="card-footer">
+                                <span class="price">¥ 880</span>
+                                <button class="btn btn-outline">立即购买</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Card 2 -->
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/tea_standard/400/300" alt="峨眉雪芽标准装">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">峨眉雪芽·标准装</h3>
+                            <p class="card-desc">日常品饮之选，滋味醇厚，香气浓郁。性价比极高的自饮佳品。</p>
+                            <div class="card-footer">
+                                <span class="price">¥ 328</span>
+                                <button class="btn btn-outline">立即购买</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Card 3 -->
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/tea_spring/400/300" alt="峨眉雪芽春茶新茗">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">峨眉雪芽·春茶新茗</h3>
+                            <p class="card-desc">当年新茶，鲜爽度极高。适合喜欢追求新鲜口感的茶友。</p>
+                            <div class="card-footer">
+                                <span class="price">¥ 458</span>
+                                <button class="btn btn-outline">立即购买</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Card 4 -->
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/tea_gift/400/300" alt="峨眉雪芽伴手礼">
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">峨眉雪芽·伴手礼</h3>
+                            <p class="card-desc">精美定制包装，内含多种规格混搭，适合商务伴手礼或节日庆典。</p>
+                            <div class="card-footer">
+                                <span class="price">¥ 680</span>
+                                <button class="btn btn-outline">立即购买</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brewing Guide -->
+        <section id="brewing" class="brewing">
+            <div class="container">
+                <div class="brewing-container">
+                    <div class="brewing-info">
+                        <h2>专业冲泡指南</h2>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <h4>1. 选器</h4>
+                                <p>建议使用透明玻璃杯或白瓷盖碗，以便欣赏茶叶在水中舒展的姿态。</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>2. 投茶</h4>
+                                <p>取茶叶约3-5克，根据个人口味调整。玻璃杯可采用“上投法”或“中投法”。</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>3. 注水</h4>
+                                <p>使用85℃-90℃的温水。避免使用沸水直接冲泡嫩芽，以免烫伤茶叶影响口感。</p>
+                            </div>
+                            <div class="step-item">
+                                <h4>4. 静候</h4>
+                                <p>静置1-2分钟，待茶香释放。可多次续水，直至茶味变淡。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brewing-visual">
+                        <div class="tea-pot">
+                            <div class="tea-leaf"></div>
+                        </div>
+                        <h3>一叶一芽，一盏清欢</h3>
+                        <p style="color: #666; margin-top: 10px;">掌握好水温与时间，释放峨眉雪芽的极致鲜爽。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题</h2>
+                    <p>关于峨眉雪芽的选购与品鉴</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>峨眉雪芽属于什么类型的茶？</h3>
+                        <p>峨眉雪芽属于绿茶类，是中国国家地理标志产品。它生长于峨眉山高山云雾地带，具有绿茶特有的鲜爽风味。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>如何辨别正宗的峨眉雪芽？</h3>
+                        <p>正宗的峨眉雪芽外形扁平光滑，色泽嫩绿油润。冲泡后汤色嫩绿明亮，香气清雅，滋味鲜爽回甘。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>茶叶收到后如何保存？</h3>
+                        <p>请将茶叶置于密封罐中，放置在阴凉、干燥、避光、无异味的地方。建议在保质期内饮用完毕，以获得最佳风味。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>什么季节适合饮用峨眉雪芽？</h3>
+                        <p>峨眉雪芽以春季明前茶品质最佳，滋味最为鲜爽。夏季饮用也有清热解暑的功效。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>峨眉雪芽</h3>
+                    <p>专注高山绿茶研发与生产，传承千年茶文化。每一片叶子都承载着峨眉山的灵气与匠心。</p>
+                    <p>地址：四川省峨眉山市黄湾镇<br>电话：400-XXX-XXXX</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">产品中心</a></li>
+                        <li><a href="#">茶文化</a></li>
+                        <li><a href="#">加盟合作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>产品服务</h4>
+                    <ul>
+                        <li><a href="#">特级礼盒</a></li>
+                        <li><a href="#">自饮装</a></li>
+                        <li><a href="#">企业定制</a></li>
+                        <li><a href="#">售后保障</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">小红书</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 峨眉雪芽官方网站 版权所有 | ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                          </html>

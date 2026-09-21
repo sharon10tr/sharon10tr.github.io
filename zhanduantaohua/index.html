@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="斩断桃花，提供专业的情感建议、人际关系处理指南及心理学分析，帮助用户识别烂桃花、化解情感纠葛，重建健康的人际边界。">
+    <meta name="keywords" content="斩断桃花, 情感建议, 烂桃花, 人际边界, 心理咨询">
+    <title>斩断桃花-情感纠葛化解与人际关系边界重建指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8e44ad;
+            --secondary-color: #9b59b6;
+            --accent-color: #e84393;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-body: #fdf6f9;
+            --bg-card: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            padding: 1rem 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(142, 68, 173, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(142, 68, 173, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #fdf6f9 0%, #f3e5f5 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .tag {
+            background: rgba(142, 68, 173, 0.1);
+            color: var(--primary-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Diagnosis Section */
+        .diagnosis {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .diagnosis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .diagnosis-card {
+            background: var(--bg-body);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .diagnosis-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow);
+        }
+
+        .diagnosis-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .diagnosis-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .diagnosis-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Analysis Section */
+        .analysis {
+            padding: 80px 0;
+        }
+
+        .analysis-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .analysis-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .analysis-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .analysis-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .analysis-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .analysis-visual {
+            background: var(--primary-color);
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .analysis-visual::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .flow-step {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .flow-number {
+            background: white;
+            color: var(--primary-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Methodology Section */
+        .methods {
+            padding: 80px 0;
+            background: #fafafa;
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .method-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .method-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .method-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(142, 68, 173, 0.1);
+            color: var(--primary-color);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .method-card h3 {
+            font-size: 1.2rem;
+        }
+
+        .method-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        summary {
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-dark);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 300;
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        details p {
+            margin-top: 15px;
+            color: var(--text-light);
+            padding-right: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .analysis-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .method-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <span>斩断桃花</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#diagnosis">识别烂桃花</a></li>
+                    <li><a href="#analysis">心理分析</a></li>
+                    <li><a href="#methods">处理方法</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-btn">获取专业建议</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>斩断桃花<br>重建人际边界</h1>
+                <p>你是否深陷于无法拒绝的纠缠？面对情感纠葛与不健康的人际关系，我们提供科学的心理学视角与实用的应对策略，助你找回生活的主动权。</p>
+                <div class="hero-tags">
+                    <span class="tag">情感咨询</span>
+                    <span class="tag">边界感建立</span>
+                    <span class="tag">拒绝技巧</span>
+                    <span class="tag">心理疗愈</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diagnosis Section -->
+        <section id="diagnosis" class="diagnosis">
+            <div class="container">
+                <h2 class="section-title">如何判断是否遇到“烂桃花”</h2>
+                <p class="section-subtitle">并非所有的关注都是爱。识别不健康关系的信号，是解决问题的第一步。</p>
+                
+                <div class="diagnosis-grid">
+                    <div class="diagnosis-card">
+                        <div class="diagnosis-icon">🚫</div>
+                        <h3>情感操控与PUA</h3>
+                        <p>通过贬低、冷暴力或忽冷忽热来控制你的情绪，让你在关系中失去自信。</p>
+                    </div>
+                    <div class="diagnosis-card">
+                        <div class="diagnosis-icon">🚧</div>
+                        <h3>边界模糊不清</h3>
+                        <p>对方未经允许侵入你的私人空间，对你的社交、工作或生活习惯指手画脚。</p>
+                    </div>
+                    <div class="diagnosis-card">
+                        <div class="diagnosis-icon">🌀</div>
+                        <h3>沉没成本陷阱</h3>
+                        <p>即使感到痛苦，也因投入的时间、金钱或情感而无法轻易放手，不断自我合理化。</p>
+                    </div>
+                    <div class="diagnosis-card">
+                        <div class="diagnosis-icon">💬</div>
+                        <h3>缺乏尊重的沟通</h3>
+                        <p>沟通时总是打断你、无视你的感受，或者将话题强行引向对自己有利的方向。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis Section -->
+        <section id="analysis" class="analysis">
+            <div class="container">
+                <div class="analysis-layout">
+                    <div class="analysis-content">
+                        <h2>斩断桃花的深层心理机制</h2>
+                        <p>斩断桃花不仅仅是切断一段关系，更是一场关于自我价值的心理重建。很多时候，我们难以拒绝并非因为对方魅力太大，而是因为内在缺乏建立边界的勇气。</p>
+                        <p>这通常源于对“被拒绝”的恐惧、讨好型人格倾向，或是童年时期形成的过度依赖模式。理解这些根源，才能从根本上解决问题。</p>
+                        <ul class="analysis-list">
+                            <li><strong>建立心理边界：</strong> 明确哪些行为是可接受的，哪些是不可触碰的底线。</li>
+                            <li><strong>课题分离：</strong> 分清这是谁的课题，不为他人的情绪失控买单。</li>
+                            <li><strong>自我价值确认：</strong> 确认你的价值不取决于他人的评价，也不需要通过“被需要”来证明。</li>
+                        </ul>
+                    </div>
+                    <div class="analysis-visual">
+                        <div class="flow-step">
+                            <div class="flow-number">1</div>
+                            <div>
+                                <h4>识别干扰源</h4>
+                                <p style="font-size:0.9rem; opacity:0.9">客观分析对方的行为模式</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-number">2</div>
+                            <div>
+                                <h4>建立防御机制</h4>
+                                <p style="font-size:0.9rem; opacity:0.9">制定沟通底线与应对话术</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-number">3</div>
+                            <div>
+                                <h4>执行断联行动</h4>
+                                <p style="font-size:0.9rem; opacity:0.9">逐步减少接触直至物理隔绝</p>
+                            </div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-number">4</div>
+                            <div>
+                                <h4>情绪疗愈重建</h4>
+                                <p style="font-size:0.9rem; opacity:0.9">关注自身成长，培养新爱好</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methods Section -->
+        <section id="methods" class="methods">
+            <div class="container">
+                <h2 class="section-title">实用的斩断策略</h2>
+                <p class="section-subtitle">从态度到行动，一套系统的解决方案。</p>
+                
+                <div class="method-grid">
+                    <div class="method-card">
+                        <div class="method-header">
+                            <div class="method-icon">🤐</div>
+                            <h3>冷处理与拖延</h3>
+                        </div>
+                        <p>对于不必要的邀约或纠缠，不要立刻热情回应。通过“忙碌”、“没空”等理由温和地推迟接触。这种策略能有效降低对方的热情，并为你争取思考时间。</p>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-header">
+                            <div class="method-icon">🛡️</div>
+                            <h3>坚定而温和的拒绝</h3>
+                        </div>
+                        <p>拒绝时态度要坚决，但语气要平和。避免解释过多的理由，以免给对方留下“只要我解释清楚，他就会同意”的错觉。使用“我理解你的想法，但我无法……”这样的句式。</p>
+                    </div>
+                    <div class="method-card">
+                        <div class="method-header">
+                            <div class="method-icon">🚪</div>
+                            <h3>物理与数字隔离</h3>
+                        </div>
+                        <p>如果软性拒绝无效，需要采取更决绝的措施。拉黑或删除联系方式是必要的手段。同时，减少去对方常出现的场所，切断共同社交圈的曝光，打破“藕断丝连”的温床。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                <div class="faq-container">
+                    <details>
+                        <summary>斩断桃花后感到内疚怎么办？</summary>
+                        <p>这是非常正常的心理反应，被称为“戒断反应”。对方的存在可能填补了你情感上的某个缺口。请记住，内疚是因为你在乎，但长痛不如短痛。内疚感会随着你新生活的建立而逐渐淡化。</p>
+                    </details>
+                    <details>
+                        <summary>对方死缠烂打，威胁要伤害自己，该如何处理？</summary>
+                        <p>遇到这种情况，首要原则是保护自己的人身安全。不要试图独自承担对方的情绪责任，必要时可以寻求朋友、家人或专业心理咨询师的帮助。不要被对方的情绪勒索所控制。</p>
+                    </details>
+                    <details>
+                        <summary>斩断桃花需要多长时间？</summary>
+                        <p>每个人的情况不同，通常需要几周到几个月的时间。这取决于关系的深度、纠缠的程度以及你自我疗愈的速度。保持耐心，专注于自己的生活目标。</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>斩断桃花</h2>
+                    <p>致力于提供科学、客观的情感建议与人际关系指导。我们相信，每个人都有权利拥有清晰、健康、不被打扰的生活空间。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#diagnosis">识别烂桃花</a></li>
+                        <li><a href="#methods">处理方法</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关主题</h4>
+                    <ul>
+                        <li><a href="#">情感边界</a></li>
+                        <li><a href="#">人际交往</a></li>
+                        <li><a href="#">自我成长</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>邮箱：help@example.com</li>
+                        <li>微信：cutflow_guide</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 斩断桃花指南. 保留所有权利. 本站内容仅供参考，不构成医疗或心理咨询建议。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                  </html>

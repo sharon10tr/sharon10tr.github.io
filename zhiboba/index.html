@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="直播把 - 全方位直播导航平台，汇集游戏、秀场、电商、户外等多领域直播资源，提供直播分类导航、热门主播推荐及在线观看入口。">
+    <meta name="keywords" content="直播把,直播导航,在线直播,直播平台,直播入口">
+    <title>直播把 - 热门直播平台导航与在线观看指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff2e63;
+            --secondary-color: #08d9d6;
+            --dark-bg: #1a1a2e;
+            --card-bg: #16213e;
+            --text-main: #eaeaea;
+            --text-muted: #a0a0a0;
+            --spacing-unit: 16px;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .search-bar {
+            display: none;
+            flex: 1;
+            max-width: 500px;
+            margin: 0 2rem;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .search-bar {
+                display: block;
+            }
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 40px 10px 15px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            outline: none;
+        }
+
+        .search-bar input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .search-bar button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-color);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-menu {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .nav-menu {
+                display: flex;
+                gap: 2rem;
+            }
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 4rem 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(22, 33, 62, 0.9) 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border: 1px solid transparent;
+        }
+
+        .tag:hover {
+            border-color: var(--secondary-color);
+            color: var(--secondary-color);
+            background: rgba(8, 217, 214, 0.1);
+        }
+
+        /* Categories Grid */
+        .section-title {
+            font-size: 1.5rem;
+            margin: 3rem 0 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: normal;
+        }
+
+        .section-title a:hover {
+            color: var(--secondary-color);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .category-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .cat-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+        .category-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .cat-link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .cat-link svg {
+            width: 16px;
+            height: 16px;
+            margin-left: 5px;
+            transition: transform 0.2s;
+        }
+
+        .category-card:hover .cat-link svg {
+            transform: translateX(5px);
+        }
+
+        /* Live Preview Section */
+        .live-preview {
+            background: linear-gradient(to bottom, var(--dark-bg), #0f3460);
+            padding: 3rem 0;
+        }
+
+        .live-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .live-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        .live-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .live-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            background-color: #000;
+        }
+
+        .live-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .live-card:hover .live-thumbnail img {
+            opacity: 0.6;
+        }
+
+        .live-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .live-info {
+            padding: 1rem;
+        }
+
+        .live-title {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .live-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .live-user {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .live-user img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        /* Features / Guide */
+        .guide-section {
+            padding: 4rem 0;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .guide-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .guide-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .guide-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .guide-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-muted);
+        }
+
+        .guide-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f0f1a;
+            padding: 3rem 0 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Utility */
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                直播<span>把</span>
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索主播、游戏或分类...">
+                <button type="button" aria-label="搜索">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">游戏直播</a>
+                <a href="#">秀场娱乐</a>
+                <a href="#">体育赛事</a>
+                <a href="#">购物带货</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>发现精彩直播，连接无限可能</h1>
+                <p>直播把为您提供全网最全的直播平台导航，从热门游戏竞技到生活才艺展示，一键直达海量直播间。</p>
+                <div class="hero-tags">
+                    <a href="#" class="tag">🎮 原神直播</a>
+                    <a href="#" class="tag">🏀 NBA直播</a>
+                    <a href="#" class="tag">👗 时尚穿搭</a>
+                    <a href="#" class="tag">🎵 音乐现场</a>
+                    <a href="#" class="tag">🛒 电商带货</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="section-title">
+                <h2>热门直播分类</h2>
+                <a href="#">查看更多 &rarr;</a>
+            </div>
+            
+            <div class="category-grid">
+                <article class="category-card">
+                    <div class="cat-icon">🎮</div>
+                    <h3>电子竞技</h3>
+                    <p>涵盖LOL、DOTA2、CS:GO等主流赛事直播，关注职业战队与高水平路人局。</p>
+                    <a href="#" class="cat-link">进入分类 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </article>
+
+                <article class="category-card">
+                    <div class="cat-icon">🎵</div>
+                    <h3>音乐秀场</h3>
+                    <p>K歌、乐器演奏、舞蹈表演，随时随地欣赏才艺主播的精彩瞬间。</p>
+                    <a href="#" class="cat-link">进入分类 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </article>
+
+                <article class="category-card">
+                    <div class="cat-icon">🛒</div>
+                    <h3>电商带货</h3>
+                    <p>好物推荐、直播购物、限时秒杀，在直播间发现高性价比商品。</p>
+                    <a href="#" class="cat-link">进入分类 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </article>
+
+                <article class="category-card">
+                    <div class="cat-icon">🎥</div>
+                    <h3>户外探险</h3>
+                    <p>旅行直播、户外探险、城市探索，足不出户看遍世界各地风景。</p>
+                    <a href="#" class="cat-link">进入分类 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </article>
+
+                <article class="category-card">
+                    <div class="cat-icon">📚</div>
+                    <h3>知识分享</h3>
+                    <p>语言学习、编程教学、财经分析，在直播中获取实用知识与技能。</p>
+                    <a href="#" class="cat-link">进入分类 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </article>
+
+                <article class="category-card">
+                    <div class="cat-icon">⚽</div>
+                    <h3>体育赛事</h3>
+                    <p>足球、篮球、网球等热门体育项目直播，不错过每一个进球瞬间。</p>
+                    <a href="#" class="cat-link">进入分类 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                </article>
+            </div>
+        </section>
+
+        <section class="live-preview">
+            <div class="container">
+                <div class="section-title">
+                    <h2>正在热播</h2>
+                    <a href="#">直播大厅 &rarr;</a>
+                </div>
+                
+                <div class="live-grid">
+                    <article class="live-card">
+                        <div class="live-thumbnail">
+                            <span class="live-badge">LIVE</span>
+                            <img src="https://picsum.photos/seed/game1/400/225" alt="游戏直播封面">
+                        </div>
+                        <div class="live-info">
+                            <h3 class="live-title">王者峡谷冲分！技术流主播带你上分</h3>
+                            <div class="live-meta">
+                                <div class="live-user">
+                                    <img src="https://picsum.photos/seed/avatar1/50/50" alt="用户头像">
+                                    <span>峡谷之王</span>
+                                </div>
+                                <span>2.3w 观看</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="live-card">
+                        <div class="live-thumbnail">
+                            <span class="live-badge">LIVE</span>
+                            <img src="https://picsum.photos/seed/music1/400/225" alt="音乐直播封面">
+                        </div>
+                        <div class="live-info">
+                            <h3 class="live-title">深夜电台：一起聊聊心事，晚安</h3>
+                            <div class="live-meta">
+                                <div class="live-user">
+                                    <img src="https://picsum.photos/seed/avatar2/50/50" alt="用户头像">
+                                    <span>深夜猫</span>
+                                </div>
+                                <span>856 观看</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="live-card">
+                        <div class="live-thumbnail">
+                            <span class="live-badge">LIVE</span>
+                            <img src="https://picsum.photos/seed/outdoor1/400/225" alt="户外直播封面">
+                        </div>
+                        <div class="live-info">
+                            <h3 class="live-title">周末露营指南：如何布置完美的野餐地</h3>
+                            <div class="live-meta">
+                                <div class="live-user">
+                                    <img src="https://picsum.photos/seed/avatar3/50/50" alt="用户头像">
+                                    <span>户外老张</span>
+                                </div>
+                                <span>5.1k 观看</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="container guide-section">
+            <div class="section-title">
+                <h2>新手指南与常见问题</h2>
+            </div>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <h3>如何选择适合的直播平台？</h3>
+                    <ul class="guide-list">
+                        <li><strong>看内容：</strong>如果你喜欢打游戏，优先选择游戏垂直平台；如果喜欢才艺展示，秀场类平台更合适。</li>
+                        <li><strong>看社区：</strong>选择用户活跃度高、弹幕氛围好的平台，互动体验更好。</li>
+                        <li><strong>看设备：</strong>确保网络稳定，使用高清摄像头和麦克风能获得更好的直播效果。</li>
+                    </ul>
+                </div>
+                <div class="guide-card">
+                    <h3>直播观看注意事项</h3>
+                    <ul class="guide-list">
+                        <li><strong>防沉迷：</strong>合理安排观看时间，避免过度沉迷影响正常生活。</li>
+                        <li><strong>理性消费：</strong>在电商带货直播间购物时，请仔细比对商品参数，理性下单。</li>
+                        <li><strong>文明互动：</strong>遵守平台规则，文明发言，共同维护良好的直播环境。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 1rem; display:inline-block;">
+                        直播<span>把</span>
+                    </a>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        专注直播导航服务，为您提供最便捷的直播入口与分类浏览体验。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>热门分类</h4>
+                    <ul>
+                        <li><a href="#">游戏直播</a></li>
+                        <li><a href="#">秀场娱乐</a></li>
+                        <li><a href="#">体育赛事</a></li>
+                        <li><a href="#">户外探险</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">平台介绍</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 直播把 All Rights Reserved. 本站仅为导航服务，不存储任何视频内容。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>

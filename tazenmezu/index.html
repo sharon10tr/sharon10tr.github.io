@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="她怎么组词？为您提供详细的她字组词大全、成语搭配及造句示例，帮助您更好地理解和运用“她”字。">
+    <meta name="keywords" content="她怎么组词,她字组词,她组词大全,她字造句,她字成语">
+    <title>她怎么组词-她字组词大全与造句示例</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Search Bar */
+        .search-container {
+            max-width: 600px;
+            margin: 30px auto 0;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            outline: none;
+        }
+
+        /* Main Content */
+        main {
+            padding-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            padding-left: 15px;
+            border-left: 5px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        /* Word Cards Grid */
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .word-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .word-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .word {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .pinyin {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            background: #f1f2f6;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .sentence-box {
+            background-color: #f8f9fa;
+            border-left: 3px solid var(--secondary-color);
+            padding: 12px;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .sentence-label {
+            font-size: 0.75rem;
+            color: #999;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        /* Categories Section */
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .cat-item {
+            background: var(--card-bg);
+            padding: 30px 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .cat-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .cat-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .cat-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Usage Guide */
+        .guide-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        .guide-content h3 {
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .guide-content p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .guide-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .guide-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d3436;
+            color: #b2bec3;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-links {
+                display: none; /* Simple hiding for mobile, could be hamburger */
+            }
+
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                <span>组词助手</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">常用字</a>
+                <a href="#">成语大全</a>
+                <a href="#">造句示例</a>
+                <a href="#">关于我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>她怎么组词？</h1>
+            <p>探索“她”字的丰富搭配，从常用词汇到优美成语，助您精准运用。</p>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="搜索其他汉字组词..." id="searchInput">
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Category Navigation -->
+        <section class="categories">
+            <div class="cat-item">
+                <span class="cat-icon">👩</span>
+                <div class="cat-title">人物称谓</div>
+            </div>
+            <div class="cat-item">
+                <span class="cat-icon">📖</span>
+                <div class="cat-title">文学描写</div>
+            </div>
+            <div class="cat-item">
+                <span class="cat-icon">🎭</span>
+                <div class="cat-title">角色扮演</div>
+            </div>
+            <div class="cat-item">
+                <span class="cat-icon">✨</span>
+                <div class="cat-title">美好意象</div>
+            </div>
+        </section>
+
+        <!-- Word List Section -->
+        <section id="word-list">
+            <h2 class="section-title">常用组词推荐</h2>
+            
+            <div class="word-grid">
+                <!-- Card 1 -->
+                <article class="word-card">
+                    <div class="card-header">
+                        <span class="word">她</span>
+                        <span class="pinyin">tā</span>
+                    </div>
+                    <p class="card-desc">第三人称代词。指代女性说话者或听话者。用于口语和非正式书面语中，强调性别区分。</p>
+                    <div class="sentence-box">
+                        <span class="sentence-label">造句示例</span>
+                        <p>她今天穿了一件红色的连衣裙，看起来非常精神。</p>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="word-card">
+                    <div class="card-header">
+                        <span class="word">她的</span>
+                        <span class="pinyin">tā de</span>
+                    </div>
+                    <p class="card-desc">“她”的所属格，表示属于女性。在句子中作定语，修饰名词。</p>
+                    <div class="sentence-box">
+                        <span class="sentence-label">造句示例</span>
+                        <p>我非常喜欢她的画，尤其是那幅关于春天的作品。</p>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="word-card">
+                    <div class="card-header">
+                        <span class="word">她们</span>
+                        <span class="pinyin">tā men</span>
+                    </div>
+                    <p class="card-desc">复数形式，指代两个或两个以上的女性。</p>
+                    <div class="sentence-box">
+                        <span class="sentence-label">造句示例</span>
+                        <p>她们在公园里一起散步，谈论着最近的工作和生活。</p>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="word-card">
+                    <div class="card-header">
+                        <span class="word">她乡</span>
+                        <span class="pinyin">tā xiāng</span>
+                    </div>
+                    <p class="card-desc">异乡，客居之地。常带有漂泊和思乡的情感色彩。</p>
+                    <div class="sentence-box">
+                        <span class="sentence-label">造句示例</span>
+                        <p>远离故乡来到异乡打拼，他心中难免感到孤独。</p>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="word-card">
+                    <div class="card-header">
+                        <span class="word">她者</span>
+                        <span class="pinyin">tā zhě</span>
+                    </div>
+                    <p class="card-desc">文学或社会学概念，指相对于“主体”（通常是男性）而言的女性群体，强调女性在社会话语中的他者地位。</p>
+                    <div class="sentence-box">
+                        <span class="sentence-label">造句示例</span>
+                        <p>作者试图通过这部作品来探讨女性如何摆脱“她者”的标签。</p>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="word-card">
+                    <div class="card-header">
+                        <span class="word">她人</span>
+                        <span class="pinyin">tā rén</span>
+                    </div>
+                    <p class="card-desc">指别的女性，通常用于比较或区分对象。</p>
+                    <div class="sentence-box">
+                        <span class="sentence-label">造句示例</span>
+                        <p>她总是担心自己比不上她人，缺乏自信。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Usage Guide Section -->
+        <section class="guide-section">
+            <h2 class="section-title">使用指南与注意事项</h2>
+            <div class="guide-content">
+                <h3>1. 主谓宾结构中的应用</h3>
+                <p>在中文句子中，“她”通常作为主语或宾语出现。例如：“<strong>她</strong>唱歌很好听”（主语）；“我爱听<strong>她</strong>唱歌”（宾语）。</p>
+                
+                <h3>2. 所属格的用法</h3>
+                <p>当表示“她的”时，通常写作“她的”。例如：“<strong>她的</strong>书包”。</p>
+                
+                <h3>3. 复数的表达</h3>
+                <p>如果句子中的对象包含两个或两个以上的女性，必须使用“她们”，不能省略“们”。</p>
+
+                <h3>4. 语境区分</h3>
+                <p>在书面语或正式场合，为了保持庄重感，有时会使用“该女性”或直接使用名词来避免重复使用代词。但在日常交流中，“她”是最自然的选择。</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="guide-section" style="background-color: #fff; border-left: 5px solid #00b894;">
+            <h2 class="section-title">常见问题 (FAQ)</h2>
+            <div style="margin-top: 20px;">
+                <details style="margin-bottom: 15px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--text-main);">“她”和“它”有什么区别？</summary>
+                    <p style="margin-top: 10px; color: var(--text-light);">“她”专门用于指代女性人物；“它”用于指代事物、动物或抽象概念。这是性别代词的区别。</p>
+                </details>
+                <details style="margin-bottom: 15px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--text-main);">“她们”可以指代一个女生吗？</summary>
+                    <p style="margin-top: 10px; color: var(--text-light);">不可以。“她们”严格用于复数，即两个或两个以上。如果只有一个女生，必须用“她”。</p>
+                </details>
+                <details style="margin-bottom: 15px; cursor: pointer;">
+                    <summary style="font-weight: 600; color: var(--text-main);">“她”字在古文中常用吗？</summary>
+                    <p style="margin-top: 10px; color: var(--text-light);）">现代汉语中广泛使用“她”。在古代汉语中，通常用“其”或直接使用人名，没有专门的第三人称女性代词。</p>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">首页</a>
+                <a href="#">常用字组词</a>
+                <a href="#">成语大全</a>
+                <a href="#">联系我们</a>
+            </div>
+            <p class="copyright">Copyright © 2023 组词助手. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的交互逻辑：搜索框回车事件
+        document.getElementById('searchInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                const val = this.value.trim();
+                if(val) {
+                    alert('您搜索了：' + val + '\n（这是一个演示页面，实际功能需连接后端）');
+                }
+            }
+        });
+
+        // 简单的分类点击交互
+        const catItems = document.querySelectorAll('.cat-item');
+        catItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const title = item.querySelector('.cat-title').innerText;
+                console.log('用户点击了分类：' + title);
+                // 实际场景会跳转或筛选内容
+            });
+        });
+    </script>
+</body>
+                  </html>

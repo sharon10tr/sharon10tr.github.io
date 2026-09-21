@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩衣衣 - 专注于韩式风格穿搭灵感、时尚趋势分析与日常搭配指南。提供从初秋到冬季的韩系穿搭灵感，涵盖大衣、针织衫、半身裙等多种单品推荐。">
+    <meta name="keywords" content="韩衣衣,韩式穿搭,韩系女装,时尚搭配,穿搭灵感,韩风大衣">
+    <title>韩衣衣-韩式风格穿搭灵感与搭配指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #c5a47e;
+            --secondary-color: #2c2c2c;
+            --accent-color: #e8d5c4;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://picsum.photos/seed/fashionhero/1920/1080.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 36px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            background-color: #b08d6b;
+            transform: translateY(-2px);
+        }
+
+        /* Categories */
+        .categories {
+            padding: 60px 0;
+            background-color: var(--bg-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .category-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .category-card p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Trending Section */
+        .trending {
+            padding: 60px 0;
+            background-color: var(--card-bg);
+        }
+
+        .trending-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .trend-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .trend-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .trend-img-wrapper {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .trend-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .trend-card:hover .trend-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        .trend-content {
+            padding: 20px;
+        }
+
+        .trend-tag {
+            font-size: 12px;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .trend-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .trend-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Features/Style Guide */
+        .style-guide {
+            padding: 60px 0;
+            background-color: var(--bg-color);
+        }
+
+        .guide-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .guide-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .guide-text h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .guide-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .check-list li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            color: var(--text-main);
+        }
+
+        .check-list li::before {
+            content: "✔";
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .guide-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .guide-image img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 15px;
+        }
+
+        .newsletter p {
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+            min-width: 200px;
+        }
+
+        .newsletter-form button {
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background-color: #b08d6b;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: #aaa;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0 10px;
+            }
+
+            nav {
+                display: none; /* Simplified for mobile, ideally a hamburger menu */
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .trending-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .guide-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .trending-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">韩衣衣<span>.</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">每日穿搭</a></li>
+                    <li><a href="#">风格专栏</a></li>
+                    <li><a href="#">品牌推荐</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn" aria-label="搜索">🔍</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>探索韩式风格的无限可能</h1>
+                <p>从优雅通勤到休闲周末，为您精选当下最流行的韩系穿搭灵感与搭配技巧。</p>
+                <a href="#" class="cta-btn">开始浏览灵感</a>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories">
+            <div class="container">
+                <div class="section-title">
+                    <h2>风格分类</h2>
+                    <p>根据您的日常场景，找到最适合的韩衣衣搭配方案</p>
+                </div>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <div class="category-icon">👔</div>
+                        <h3>职场通勤</h3>
+                        <p>干练利落的西装与衬衫搭配，展现专业气质。</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">☕</div>
+                        <h3>休闲日常</h3>
+                        <p>舒适慵懒的针织衫与阔腿裤，享受自在时光。</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">👠</div>
+                        <h3>约会聚会</h3>
+                        <p>精致优雅的连衣裙与短外套，成为焦点所在。</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🍂</div>
+                        <h3>季节限定</h3>
+                        <p>当季流行色与面料解析，把握最新时尚脉搏。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending / Featured -->
+        <section class="trending">
+            <div class="container">
+                <div class="section-title">
+                    <h2>热门搭配推荐</h2>
+                    <p>韩衣衣编辑团队为您精选的本周热门穿搭灵感</p>
+                </div>
+                <div class="trending-grid">
+                    <!-- Item 1 -->
+                    <article class="trend-card">
+                        <div class="trend-img-wrapper">
+                            <span class="badge">必读</span>
+                            <img src="https://picsum.photos/seed/fashion1/400/500" alt="韩式大衣穿搭">
+                        </div>
+                        <div class="trend-content">
+                            <span class="trend-tag">冬季穿搭</span>
+                            <h3 class="trend-title">韩版长款大衣的3种穿法</h3>
+                            <p class="trend-desc">告别臃肿，学会利用腰带和内搭层次，轻松穿出高挑身形。</p>
+                        </div>
+                    </article>
+                    <!-- Item 2 -->
+                    <article class="trend-card">
+                        <div class="trend-img-wrapper">
+                            <img src="https://picsum.photos/seed/fashion2/400/500" alt="温柔风毛衣">
+                        </div>
+                        <div class="trend-content">
+                            <span class="trend-tag">秋季必备</span>
+                            <h3 class="trend-title">温柔系针织衫搭配指南</h3>
+                            <p class="trend-desc">米色与燕麦色系如何混搭？这里有一份保姆级的配色教程。</p>
+                        </div>
+                    </article>
+                    <!-- Item 3 -->
+                    <article class="trend-card">
+                        <div class="trend-img-wrapper">
+                            <span class="badge">新品</span>
+                            <img src="https://picsum.photos/seed/fashion3/400/500" alt="极简风套装">
+                        </div>
+                        <div class="trend-content">
+                            <span class="trend-tag">极简主义</span>
+                            <h3 class="trend-title">韩系极简风套装解析</h3>
+                            <p class="trend-desc">利用纯色系和利落剪裁，打造不出错的通勤造型。</p>
+                        </div>
+                    </article>
+                    <!-- Item 4 -->
+                    <article class="trend-card">
+                        <div class="trend-img-wrapper">
+                            <img src="https://picsum.photos/seed/fashion4/400/500" alt="半身裙搭配">
+                        </div>
+                        <div class="trend-content">
+                            <span class="trend-tag">下装搭配</span>
+                            <h3 class="trend-title">如何挑选适合自己的半身裙</h3>
+                            <p class="trend-desc">根据身材比例选择A字裙还是包臀裙，扬长避短的关键。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Style Guide / Deep Dive -->
+        <section class="style-guide">
+            <div class="container">
+                <div class="guide-container">
+                    <div class="guide-text">
+                        <h2>韩衣衣·穿搭课堂</h2>
+                        <p>不仅仅是模仿，我们致力于为您提供有价值的时尚见解。韩衣衣通过分析韩国街头趋势，为您提炼出适合亚洲人身材的实用穿搭公式。</p>
+                        <p>无论您是追求时尚的职场新人，还是热爱生活的精致女孩，在这里都能找到属于您的风格语言。</p>
+                        <ul class="check-list">
+                            <li>100%基于真实韩国街头趋势分析</li>
+                            <li>提供尺码与材质选购建议</li>
+                            <li>解答日常搭配中的常见误区</li>
+                        </ul>
+                        <a href="#" style="color: var(--primary-color); font-weight: 600; margin-top: 20px; display: inline-block;">查看更多课堂内容 &rarr;</a>
+                    </div>
+                    <div class="guide-image">
+                        <img src="https://picsum.photos/seed/fashionguide/600/400" alt="韩衣衣搭配课堂">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <div class="container">
+                <h2>订阅我们的穿搭周刊</h2>
+                <p>每周一更新，获取最新的韩流时尚资讯与独家搭配优惠。</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('感谢您的订阅！');">
+                    <input type="email" placeholder="请输入您的邮箱地址" required>
+                    <button type="submit">立即订阅</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于韩衣衣</h4>
+                    <p style="font-size: 14px; line-height: 1.8;">韩衣衣是一个专注于分享韩式风格穿搭的时尚社区。我们致力于通过清晰的图片和实用的文字，帮助每一位女性找到自信与美丽。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">每日穿搭</a></li>
+                        <li><a href="#">风格分类</a></li>
+                        <li><a href="#">品牌大全</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">小红书账号</a></li>
+                        <li><a href="#">微博动态</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 韩衣衣 版权所有. 本站内容仅供学习与参考，部分图片来源网络。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                  </html>
